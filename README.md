@@ -12,40 +12,47 @@ Aplikasi ini adalah kuis interaktif berbasis Flutter yang menguji pengetahuan pe
 - ✅ Penilaian otomatis untuk soal pilihan dan benar/salah
 - 📊 Halaman laporan hasil dengan skor dan feedback motivasional
 
+---
+
 ## 🧠 Struktur Soal
 
-Soal didefinisikan dalam model Question:
+Soal didefinisikan dalam model `Question` berikut:
 
-dart
+```dart
 class Question {
-final String question;
-final String type; // 'choice', 'truefalse', atau 'essay'
-final List<String>? options;
-final dynamic answer;
+  final String question;
+  final String type; // 'choice', 'truefalse', atau 'essay'
+  final List<String>? options;
+  final dynamic answer;
 
-Question({
-required this.question,
-required this.type,
-this.options,
-this.answer,
-});
+  Question({
+    required this.question,
+    required this.type,
+    this.options,
+    this.answer,
+  });
 }
+```
 
-Data dummy soal-soal tersedia di file [dummy_questions.dart](./data/dummy_questions.dart).
+Data dummy soal-soal tersedia di file [`dummy_questions.dart`](./data/dummy_questions.dart).
+
+---
 
 ## 🛠️ Struktur Proyek
 
+```
 lib/
 ├── data/
-│ └── dummy_questions.dart # Daftar soal
+│   └── dummy_questions.dart     # Daftar soal
 ├── models/
-│ └── question_model.dart # Model soal
+│   └── question_model.dart      # Model soal
 ├── pages/
-│ ├── quiz_list_page.dart # Halaman awal
-│ ├── quiz_page.dart # Halaman pengerjaan kuis
-│ ├── success_page.dart # Konfirmasi setelah submit
-│ └── report_page.dart # Hasil kuis dan feedback
-├── main.dart # Entry point
+│   ├── quiz_list_page.dart      # Halaman awal
+│   ├── quiz_page.dart           # Halaman pengerjaan kuis
+│   ├── success_page.dart        # Konfirmasi setelah submit
+│   └── report_page.dart         # Hasil kuis dan feedback
+└── main.dart                    # Entry point aplikasi
+```
 
 ## 🚀 Cara Menjalankan
 
